@@ -1,38 +1,30 @@
-# Project Title
+# Autonomous Agent Demo
 
-## Description
+This project demonstrates a simple autonomous agent using **LangGraph** to
+route user questions to external tools and **Gradio** for a minimal web
+interface.
 
-A brief description of the project, its purpose, and what it does.
+Two placeholder tools are included:
 
-## Features
+- `crm_tool` &ndash; represents a CRM (SalesForce) API call.
+- `scm_tool` &ndash; represents an SCM (o9) API call.
 
-- Feature 1
-- Feature 2
-- Feature 3
+Each tool is executed with retry logic that retries failed calls up to three
+ times using exponential backoff.
 
-## Getting Started
+## Running
 
-Instructions on how to get the project set up and running locally.
+Install dependencies (for example using `pip`):
 
-### Prerequisites
+```bash
+pip install -r requirements.txt
+```
 
-- Prerequisite 1
-- Prerequisite 2
+Then start the interface:
 
-### Installation
+```bash
+python -m app.main
+```
 
-1. Step 1
-2. Step 2
-3. Step 3
-
-## Usage
-
-How to use the project, including examples.
-
-## Contributing
-
-Guidelines for contributing to the project.
-
-## License
-
-Information about the project's license.
+Enter your question in the textbox. Mention **CRM** or **SCM** in the text to
+route the call explicitly; otherwise the CRM tool is used by default.
