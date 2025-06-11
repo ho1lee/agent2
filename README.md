@@ -2,7 +2,8 @@
 
 This project demonstrates a simple autonomous agent using **LangGraph** to
 route user questions to external tools and **Gradio** for a minimal web
-interface.
+interface. An LLM determines which tool to call using OpenAI function
+calling.
 
 Two placeholder tools are included:
 
@@ -26,5 +27,8 @@ Then start the interface:
 python -m app.main
 ```
 
-Enter your question in the textbox. Mention **CRM** or **SCM** in the text to
-route the call explicitly; otherwise the CRM tool is used by default.
+Set the `OPENAI_API_KEY` environment variable before running so the agent can
+access the OpenAI API.
+
+Enter your question in the textbox. The LLM will decide whether to call the
+`crm_tool` or `scm_tool` based on your request.
